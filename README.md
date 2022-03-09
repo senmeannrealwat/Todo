@@ -1,4 +1,4 @@
-# Todo Server Setup
+# Auth Server With Email Setup
 
 ### Requirements
 ##### Server
