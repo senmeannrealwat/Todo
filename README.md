@@ -66,12 +66,21 @@
     ```sh
       $ mkvirtualenv todo-env
       (todo-env)$ pip install -r /opt/project/Todo/requirements.txt
-    ```sh
       $ cd /opt/project/Todo
       $ python manage.py migrate
       $ python manage.py cities_light
       # Run this command and follow the instruction to create superuser for site admin
       $ python manage.py createsuperuser
-    ```
-
-  ```
+     ```
+    - Configuring sending email
+      ```sh
+        $ Open setting.py file at directory $ cd  /opt/project/Todo/Todo
+          Add you real Emial and Password To 
+           EMAIL_HOST_USER = '--------'
+           EMAIL_HOST_PASSWORD = '*******'
+        
+      
+   - Api 
+     1. Register: http://127.0.0.1:8000/api/user/register
+     2. Login: http://127.0.0.1:8000/api/user/login
+     3. Reset Password: http://127.0.0.1:8000/password-reset
