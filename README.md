@@ -15,7 +15,7 @@
     \password postgres
     ### enter password when it prompt ###
     \q
-    $ sudo -u postgres createdb [TradeDesk database name]
+    $ sudo -u postgres createdb [database name]
     ```
     TradeDesk database ```name```, database ```user```, ```port``` and ```password``` will be need for setting ```Evironment Varianbles```
 
