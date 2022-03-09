@@ -3,15 +3,13 @@
 ### Requirements
 ##### Server
   - Ubuntu >16.04.4 LT
-  - Language - Python 2.7.12
-  - Framework - Django 1.8.3
+  - Language - Python 3.8.0
+  - Framework - Django 2.2.0
   - Database Server - PostgreSQL 9.5.12
 ### Installation
 [Git](https://help.ubuntu.com/lts/serverguide/git.html) and [Virtualenvwrapper](http://virtualenvwrapper.readthedocs.io/en/latest/install.html) need in this installation
   - Install pip
     ```sh
-      $ sudo apt install python-dev
-      $ sudo apt install -y build-essential
       $ wget https://bootstrap.pypa.io/get-pip.py
       $ python get-pip.py
     ```
@@ -69,9 +67,9 @@
       $ mkvirtualenv todo-env
       (todo-env)$ pip install -r /opt/project/Todo/requirements.txt
     ```sh
+      $ cd /opt/project/Todo
       $ python manage.py migrate
       $ python manage.py cities_light
-      $ python manage.py loaddata initial_smstemplate_data
       # Run this command and follow the instruction to create superuser for site admin
       $ python manage.py createsuperuser
     ```
