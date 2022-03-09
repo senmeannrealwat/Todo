@@ -1,13 +1,29 @@
-# Todo Setup Server
+# Todo Server Setup
 
 ### Requirements
 ##### Server
-  - Ubuntus 20>
-  - Language - Python 3.8.0
-  - Framework - Django 2.2.0
+  - Ubuntu >16.04.4 LT
+  - Language - Python 2.7.12
+  - Framework - Django 1.8.3
   - Database Server - PostgreSQL 9.5.12
-  - Other ([wkhtmltopdf](https://wkhtmltopdf.org/downloads.html))
-- Install Postgres
+### Installation
+[Git](https://help.ubuntu.com/lts/serverguide/git.html) and [Virtualenvwrapper](http://virtualenvwrapper.readthedocs.io/en/latest/install.html) need in this installation
+  - Install pip
+    ```sh
+      $ sudo apt install python-dev
+      $ sudo apt install -y build-essential
+      $ wget https://bootstrap.pypa.io/get-pip.py
+      $ python get-pip.py
+    ```
+    If there is an error ```PermissionError: [Errno 13] Permission denied: '/usr/local/lib/python3.5/dist-packages/pip'```. Use command with root peremission ```$ sudo python get-pip.py```
+
+  - Install Git
+    ```sh
+    $ sudo apt update
+    $ sudo apt install git
+    ```
+
+  - Install Postgres
     ```sh
     $ sudo apt install postgresql postgresql-contrib libpq-dev
     ### set password for postgres ###
@@ -35,3 +51,29 @@
     2. Add a line like ```export WORKON_HOME=/opt/.virtualenvs``` to your .bashrc.
     3. Add a line like ```source /usr/local/bin/virtualenvwrapper.sh``` to your .bashrc.
     4. Run: ``` $ source ~/.bashrc```
+
+### Configuring and Running
+
+  - Clone the source code from github
+
+    assume that we will place the source code to /opt/project, if the directory doesn't exists please create one by
+    ```sh
+      $ sudo mkdir /opt/project
+      $ sudo chown username:www-data /opt/project
+      $ sudo chmod 775 /opt/project
+      $ cd /opt/projectorigin https://github.com/senmeannrealwat/Todo.git
+    ```
+
+  - Create virtualenv and install python package from ```TradeDesk_Backend/requirements.txt```
+    ```sh
+      $ mkvirtualenv todo-env
+      (todo-env)$ pip install -r /opt/project/Todo/requirements.txt
+    ```sh
+      $ python manage.py migrate
+      $ python manage.py cities_light
+      $ python manage.py loaddata initial_smstemplate_data
+      # Run this command and follow the instruction to create superuser for site admin
+      $ python manage.py createsuperuser
+    ```
+
+  ```
